@@ -106,7 +106,7 @@ function crawler($url) {
  * 测试用主程序
  */
 function main() {
-    $file_path = "./url-01.txt";
+    $file_path = "./url-02.txt";
     $current_url = "http://sh.58.com/fangchan/?PGTID=0d100000-0000-2ce8-2f66-8e9c53f221e9&ClickID=1"; //初始url
     $phantomSrc = "E:\js库\phantomjs-2.1.1-windows\bin\phantomjs.exe";
     $jsSrc = "F:\php\www\spider\demo6\01.js";
@@ -119,12 +119,13 @@ function main() {
         $result_url_arr = crawler($current_url);
         if ($result_url_arr) {
             foreach ($result_url_arr as $url) {   
-                exec("E:\jsLibs\phantomjs-2.1.1-windows\bin\phantomjs.exe F:/php/www/spider/demo6/01.js $url",$info);
-                var_dump($info);
+               /* exec("E:\jsLibs\phantomjs-2.1.1-windows\bin\phantomjs.exe F:/php/www/spider/demo6/01.js $url",$info);
+                var_dump($info);*/
                 fputs($fp_puts, $url . "\r\n");
             } 
-
         }
+        fclose($fp_puts);
+        fclose($fp_gets);
         /*$result_url_arr = crawler($current_url);
         if ($result_url_arr) {
             $js = "";
