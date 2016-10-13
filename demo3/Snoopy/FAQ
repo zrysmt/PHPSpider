@@ -1,0 +1,14 @@
+Q:	Why can't I fetch https pages?
+A:	Using Snoopy to fetch an https page requires PHP to be compiled with
+	OpenSSL support.  If installing PHP from source, refer to the PHP manual
+	for instructions for enabling OpenSSL support:
+	http://www.php.net/manual/en/book.openssl.php
+
+Q:	where does the function preg_match_all come from?
+A:	PCRE functions in PHP 3.0.9 and later
+
+Q:	I get the error: Warning: Wrong parameter count for fsockopen()
+A:	Upgrade your verion of PHP to 3.0.9 or later
+
+Q:	Snoopy cuts of my results every time. What's wrong?
+A:	Upgrade your verion of PHP to 3.0.9 or later

@@ -1,0 +1,108 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+ <title>Documentation for method: 
+PHPCrawler::excludeLinkSearchDocumentSections()</title>
+ <meta name="keywords" content="framework, API, manual, class reference, classreference, documentation" />
+ <meta name="description" content="The class reference contains the detailed description of how to use every class, method, and property." />
+ <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+ 
+ <script name="javascript">
+ 
+ function show_hide_examples(mode)
+ {
+   if (document.getElementById("examples").style.display == "none")
+   {
+     document.getElementById("examples").style.display = "";
+   }
+   else
+   {
+     document.getElementById("examples").style.display = "none";
+   }
+ }
+ </script>
+ 
+</head>
+
+<body>
+
+<div id="outer">
+
+<h1 id="head">
+  <span>Method: 
+PHPCrawler::excludeLinkSearchDocumentSections()</span>
+</h1>
+
+<h2 id="head">
+ <span><a href="overview.html"><< Back to class-overview</a></span>
+</h2>
+
+<br>
+
+
+
+
+
+<!--<?php include("google_code.php"); ?> -->
+
+<div id="docframe">
+
+<div id="section">
+
+Defines the sections of HTML-documents that will get ignroed by the link-finding algorithm.
+</div>
+
+<div id="section">
+<b>Signature:</b>
+<p id="signature">
+  
+public excludeLinkSearchDocumentSections($document_sections)
+</p>
+</div>
+
+<div id="section">
+<b>Parameters:</b>
+<p>
+<table id="param_list">
+  
+<tr><td id="paramname" width="1%"><b>$document_sections</b>&nbsp;</td><td width="1%"><i><i>int</i></i>&nbsp;</td><td width="*">Bitwise combination of the <a href="../PHPCrawlerLinkSearchDocumentSections/overview.html" class="inline">PHPCrawlerLinkSearchDocumentSections</a>-constants.</td></tr>
+</table>
+</p>
+</div>
+
+<div id="section">
+<b>Returns:</b>
+<p>
+<table id="param_list">
+  
+<tr><td><i>No information</i></td></tr>
+</table>
+</p>
+</div>
+
+<div id="section">
+<b>Description:</b>
+<p>
+
+  
+By default, phpcrawl is searching for links in the entire documents it receives during the crawling-process.<br>This sometimes brings up some non existing "phantom-URLs" because the crawler recognized i.e. some javascript-code<br>as a link that was not meant to be, or the crawler found a link inside an html-comment that doesn't exist anymore.<br><br>By using this method, users can define what predefined sections of HTML-documents should get ignored when it comes<br>to finding links.<br><br>See <a href="../PHPCrawlerLinkSearchDocumentSections/overview.html" class="inline">PHPCrawlerLinkSearchDocumentSections</a>-constants for all predefined sections.<br><br>Example 1:<code>// Let the crawler ignore script-sections and html-comment-sections when finding links<br>$crawler-&gt;excludeLinkSearchDocumentSections(PHPCrawlerLinkSearchDocumentSections::SCRIPT_SECTIONS |<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PHPCrawlerLinkSearchDocumentSections::HTML_COMMENT_SECTIONS);</code><br>Example 2:<code>// Let the crawler ignore all special sections except HTML-comments <br>$crawler-&gt;excludeLinkSearchDocumentSections(PHPCrawlerLinkSearchDocumentSections::ALL_SPECIAL_SECTIONS ^<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PHPCrawlerLinkSearchDocumentSections::HTML_COMMENT_SECTIONS);</code>
+  
+</p>
+</div>
+
+
+
+
+
+</div>
+
+
+<div id="footer">Docs created with <a href="http://phpclassview.cuab.de"  target="_parent">PhpClassView</a></div>
+
+</div>
+
+</body>
+</html>
